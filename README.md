@@ -96,9 +96,9 @@ This project implements a dual-purpose API system:
 
 - **Custom RAG pipeline (no RetrievalQAChain)**
 
-  ![RAG Pipeline](screenshots/ConversationRAGAPI.png)
+  ![RAG Pipeline](screenshots/ConversationalRAGAPI.png)
 
-  ![AGENT-RESPONSE](screenshots/ConversationRAGAPIResponse.png)
+  ![AGENT-RESPONSE](screenshots/ConversationalRAGAPIResponse.png)
 
 - **Handles multi-turn queries with chat memory stored in Redis**
 
@@ -108,7 +108,7 @@ This project implements a dual-purpose API system:
 
   ![Booking](screenshots/booking1.png)
 
-  ![Booking](screenshots/booking2.PNG)
+  ![Booking](screenshots/booking2.png)
 
   ![Booking](screenshots/booking3.png)
 
