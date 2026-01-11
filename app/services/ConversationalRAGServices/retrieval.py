@@ -1,7 +1,7 @@
 from ...config.ConversationalRAGconfig import get_vectorstore
 
 
-def retrieve_context(query: str, top_k: int = 3) -> str:
+async def retrieve_context(query: str, top_k: int = 3) -> str:
     """
     Retrieve the most relevant context documents from the vector store.
 
@@ -17,7 +17,7 @@ def retrieve_context(query: str, top_k: int = 3) -> str:
         return "Vector store not available"
 
     try:
-        docs = vectorstore.similarity_search(query, k=top_k)
+        docs = await vectorstore.similarity_search(query, k=top_k)
         if not docs:
             return "No relevant context found."
         return "\n\n".join([d.page_content for d in docs])

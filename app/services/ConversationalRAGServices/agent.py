@@ -1,11 +1,13 @@
 import re
 from datetime import datetime
+import asyncio
 
 from .retrieval import retrieve_context
 from .chat_history import get_chat_history, save_to_history
 from .generation import get_llm
 from .booking import handle_booking
 from ...config.ConversationalRAGconfig import get_redis_client
+from ...schema import InterviewBookingRequest
 # from langchain_openai import ChatOpenAI
 
 
@@ -33,7 +35,7 @@ def is_valid_time(time_str: str) -> bool:
     except ValueError:
         return False
 # BOOKING AND CHAT ORCHESTRATION
-def chat_with_agent(user_query: str, session_id: str)-> str:
+async def chat_with_agent(user_query: str, session_id: str)-> str:
     """
     Main orchestrator handling both chat and booking interactions.
     - Detects booking intent
@@ -95,12 +97,15 @@ def chat_with_agent(user_query: str, session_id: str)-> str:
             redis_client.hset(booking_state_key, mapping={"time": user_query})
             data = redis_client.hgetall(booking_state_key)
 
-            response = handle_booking(
-                name=data["name"],
-                email=data["email"],
-                date=data["date"],
-                time=data["time"]
+            booking_request = InterviewBookingRequest(
+            name=data["name"],
+            email=data["email"],
+            date=data["date"],
+            time=data["time"]
             )
+
+            response = await handle_booking(booking_request)
+
 
             redis_client.delete(booking_state_key)
             save_to_history(session_id, "assistant", response)

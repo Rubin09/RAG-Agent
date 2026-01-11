@@ -27,5 +27,6 @@ class InterviewBookingRequest(BaseModel):
     """Schema for validating incoming booking requests."""
     name: str
     email: EmailStr
-    date: date
-    time: time
+    date: str
+    time: str
+
