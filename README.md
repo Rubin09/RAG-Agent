@@ -82,38 +82,38 @@ This project implements a dual-purpose API system:
 
   - Recursive Character Chunking
   - LLM Semantic Chunking  
-    ![Text Chunking](screenshots/DocumentIngestionAPIResponse.PNG)
+    ![Text Chunking](screenshots/DocumentIngestionAPIResponse.png)
 
 - **Generate embeddings and store in Pinecone vector database**
 
-  ![Embeddings](<screenshots/VectorDB(Pinecone).PNG>)
+  ![Embeddings](<screenshots/VectorDB(Pinecone).png>)
 
 - **Save metadata in MongoDB**
 
-  ![PostgreSQL](screenshots/ChunkMetaDatainMongoDB.PNG)
+  ![PostgreSQL](screenshots/ChunkMetaDatainMongoDB.png)
 
 ### Conversational RAG API
 
 - **Custom RAG pipeline (no RetrievalQAChain)**
 
-  ![RAG Pipeline](screenshots/ConversationRAGAPI.PNG)
+  ![RAG Pipeline](screenshots/ConversationRAGAPI.png)
 
-  ![AGENT-RESPONSE](screenshots/ConversationRAGAPIResponse.PNG)
+  ![AGENT-RESPONSE](screenshots/ConversationRAGAPIResponse.png)
 
 - **Handles multi-turn queries with chat memory stored in Redis**
 
-  ![Chat Memory](screenshots/RedisDB.PNG)
+  ![Chat Memory](screenshots/RedisDB.png)
 
 - **Supports interview booking (name, email, date, time)**
 
-  ![Booking](screenshots/booking1.PNG)
+  ![Booking](screenshots/booking1.png)
 
   ![Booking](screenshots/booking2.PNG)
 
-  ![Booking](screenshots/booking3.PNG)
+  ![Booking](screenshots/booking3.png)
 
-  ![Booking](screenshots/booking4.PNG)
+  ![Booking](screenshots/booking4.png)
 
-  ![Booking](screenshots/booking5.PNG)
+  ![Booking](screenshots/booking5.png)
 
 ---
